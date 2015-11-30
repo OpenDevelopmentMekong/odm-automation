@@ -1,0 +1,6 @@
+---
+ckan_repos:
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_theme', name: 'ckanext-odm_theme', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_library', name: 'ckanext-odm_library', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_laws', name: 'ckanext-odm_laws', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-issues',  name: 'ckanext-issues', branch: 'master' }

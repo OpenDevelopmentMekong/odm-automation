@@ -1,0 +1,4 @@
+---
+- hosts: ckan-dev
+  roles:
+  - ckan

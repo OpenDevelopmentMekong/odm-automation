@@ -1,0 +1,4 @@
+---
+- hosts: wp-prod
+  roles:
+  - wp

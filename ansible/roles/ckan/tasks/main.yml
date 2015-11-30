@@ -1,0 +1,6 @@
+- name: Updating ckan components
+  pip: name='git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}' extra_args='--upgrade'
+  with_items: ckan_repos
+
+- name: Restarting ckan
+  shell: touch /run/uwsgi-reload
