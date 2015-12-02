@@ -54,6 +54,6 @@ ansible-playbook ansible/<PLAYBOOK_FILE>.yml -i ansible/stage -u root
 
 This material is copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
 
-It is open and licensed under the GNU Affero General Public License (AGPL) v3.0 whose full text may be found at:
+It is open and licensed under the GNU General Public License (GPL) v3.0 whose full text may be found at:
 
-http://www.fsf.org/licensing/licenses/agpl-3.0.html
+http://www.fsf.org/licensing/licenses/gpl-3.0.html
