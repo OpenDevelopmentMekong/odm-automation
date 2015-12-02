@@ -9,3 +9,6 @@ pp.opendevelopmentmekong.net:32798
 
 [wp-prod]
 #opendevelopmentmekong.net:32771
+
+[local]
+192.168.33.10
