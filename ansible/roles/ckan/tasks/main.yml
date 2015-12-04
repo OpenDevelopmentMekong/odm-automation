@@ -1,5 +1,7 @@
+
+
 - name: Updating ckan components
-  pip: name='git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}' extra_args='--upgrade'
+  shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: ckan_repos
 
 - name: Restarting ckan
