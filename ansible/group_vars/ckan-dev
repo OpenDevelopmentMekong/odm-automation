@@ -1,6 +1,9 @@
 ---
 ckan_repos:
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_theme', name: 'ckanext-odm_theme', branch: 'master' }
+ - { url: 'https://github.com/open-data/ckanext-scheming',  name: 'ckanext-scheming', branch: 'master' } 
+ - { url: 'https://github.com/ckan/ckanext-fluent',  name: 'ckanext-fluent', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_dataset', name: 'ckanext-odm_dataset', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_library', name: 'ckanext-odm_library', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_laws', name: 'ckanext-odm_laws', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_nav', name: 'ckanext-odm_nav', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-issues',  name: 'ckanext-issues', branch: 'master' }

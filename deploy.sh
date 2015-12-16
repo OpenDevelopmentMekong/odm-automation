@@ -15,4 +15,4 @@ if [ "$2" == "prod" ]; then
  exit
 fi
 
-ansible-playbook ansible/$1-$2.yml -i ansible/stage -u root
+ansible-playbook ansible/$1-$2.yml -i ansible/stage -u root -vvvv
