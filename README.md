@@ -37,7 +37,7 @@ Configure the code repositories and branches to be deployed on **group_vars** fo
 Once this is done, scripts can be executed as follows:
 
 ```
-./server.sh [wp|ckan] [dev|production]
+./deploy.sh [wp|ckan] [dev|production]
 ```
 
 Alternativelly, the ansible playbooks found on ansible/ can be executed independently using:
