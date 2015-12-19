@@ -9,4 +9,4 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master' }
  - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master' }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master' }
- - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'impl-nav_concept'}
+ - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master'}
