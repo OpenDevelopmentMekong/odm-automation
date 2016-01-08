@@ -10,9 +10,4 @@ if [ -z "$2" ]; then
   exit
 fi
 
-if [ "$2" == "prod" ]; then
- echo "Production environment not supported yet"
- exit
-fi
-
 ansible-playbook ansible/$1-$2.yml -i ansible/stage -u root -vvvv
