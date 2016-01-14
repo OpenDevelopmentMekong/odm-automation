@@ -46,10 +46,6 @@ Alternativelly, the ansible playbooks found on ansible/ can be executed independ
 ansible-playbook ansible/<PLAYBOOK_FILE>.yml -i ansible/stage -u root
 ```
 
-## TODO
-
- - [ ] Enable deployment to production environment
-
 # Copyright and License
 
 This material is copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
