@@ -4,11 +4,17 @@ pp-data.opendevelopmentmekong.net:32815
 [ckan-prod]
 data.opendevelopmentmekong.net:32796
 
+[ckan-staging]
+161.202.177.241:32801
+
 [wp-dev]
 pp.opendevelopmentmekong.net:32798
 
 [wp-prod]
-#opendevelopmentmekong.net:32771
+opendevelopmentmekong.net:32771
+
+[wp-staging]
+161.202.177.241:32804
 
 [local]
 192.168.33.10

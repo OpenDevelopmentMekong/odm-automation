@@ -1,0 +1,12 @@
+---
+wp_repos:
+ - { path: '/var/www/html/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/Google-Analytics-Dashboard-for-WP/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/mqtranslate/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master' }
+ - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master'}

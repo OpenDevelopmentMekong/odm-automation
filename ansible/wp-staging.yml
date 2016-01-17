@@ -1,0 +1,4 @@
+---
+- hosts: wp-staging
+  roles:
+  - wp

@@ -1,0 +1,5 @@
+---
+- hosts: ckan-staging
+  roles:
+  - deps-ckan
+  - ckan
