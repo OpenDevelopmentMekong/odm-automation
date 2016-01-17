@@ -6,6 +6,6 @@ ckan_repos:
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_library', name: 'ckanext-odm_library', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_laws', name: 'ckanext-odm_laws', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_nav', name: 'ckanext-odm_nav', branch: 'master' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_audit', name: 'ckanext-audit', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_audit', name: 'ckanext-odm_audit', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_migration', name: 'ckanext-odm_migration', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-issues', name: 'ckanext-issues', branch: 'master' }
