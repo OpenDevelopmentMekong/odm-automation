@@ -1,14 +1,14 @@
 [ckan-dev]
-pp-data.opendevelopmentmekong.net:32815
+119.81.30.163:32815
 
 [ckan-prod]
-data.opendevelopmentmekong.net:32796
+119.81.30.162:32796
 
 [wp-dev]
-pp.opendevelopmentmekong.net:32795
+119.81.30.163:32795
 
 [wp-prod]
-opendevelopmentmekong.net:32804
+119.81.30.162:32804
 
 [local]
 192.168.33.10
