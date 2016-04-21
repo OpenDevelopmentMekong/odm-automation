@@ -1,5 +1,3 @@
-
-
 - name: Updating ckan components
   shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: ckan_repos

@@ -1,5 +1,0 @@
----
-- hosts: ckan-prod
-  roles:
-  - deps-ckan
-  - ckan

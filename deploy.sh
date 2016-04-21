@@ -10,4 +10,4 @@ if [ -z "$2" ]; then
   exit
 fi
 
-ansible-playbook ansible/$1-$2.yml -i ansible/stage -u root -vvvv
+ansible-playbook ansible/$1.yml -i ansible/stage-$2 -u root -vvvv

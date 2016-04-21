@@ -1,4 +1,0 @@
----
-- hosts: wp-dev
-  roles:
-  - wp
