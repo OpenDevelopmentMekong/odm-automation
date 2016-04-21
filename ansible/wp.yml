@@ -1,4 +1,4 @@
 ---
-- hosts: wp
+- hosts: wp-group
   roles:
   - wp
