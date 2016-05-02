@@ -3,3 +3,7 @@
   args:
     chdir: "{{ item.path }}"
   with_items: wp_repos
+
+- name: Pull latest .po files from transifex
+  get_url: url=https://www.transifex.com/open-development-mekong/odm-frontend-theme/en_uspo/{{item.lang}}/download/for_use/ force=yes dest=/var/www/html/wp-content/languages/{{item.output_file}} headers="Authorization:Basic YWNvcmJpOjRYM2wwcmIxVHRy"
+  with_items: supported_langs
