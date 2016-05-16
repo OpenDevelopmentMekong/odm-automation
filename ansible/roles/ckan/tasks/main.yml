@@ -2,5 +2,13 @@
   shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: ckan_repos
 
+- name: Update CKAN translations ( Merge .po files)
+  shell: msgcat --use-first /usr/local/lib/python2.7/dist-packages/ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_dataset/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_library/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_laws/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_migration/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_audit/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_nav/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/issues/i18n/{{item.origin}}.po -o /usr/local/lib/python2.7/dist-packages/ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
+  with_items: langs
+
+- name: Update CKAN translations ( Compile .mo file)
+  shell: msgfmt -o /usr/local/lib/python2.7/dist-packages/ckan/i18n/{{item.dest}}/LC_MESSAGES/ckan.mo /usr/local/lib/python2.7/dist-packages/ckan/i18n/{{item.dest}}/LC_MESSAGES/ckan.po
+  with_items: langs
+
 - name: Restarting ckan
   shell: touch /run/uwsgi-reload
