@@ -3,3 +3,11 @@
   args:
     chdir: "{{ item.path }}"
   with_items: wp_repos
+
+- name: Update Wordpress translations ( Merge .po files)
+  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/jeo-odm/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
+  with_items: langs
+
+- name: Update Wordpress translations ( Compile .mo file)
+  shell: msgfmt -o /var/www/html/wp-content/languages/{{item.dest}}.mo /var/www/html/wp-content/languages/{{item.dest}}.po
+  with_items: langs

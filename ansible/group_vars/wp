@@ -18,3 +18,8 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master' }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master' }
  - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master'}
+
+langs:
+ - { origin: 'km', dest: 'km' }
+ - { origin: 'km', dest: 'kh' }
+ - { origin: 'vi', dest: 'vi' }
