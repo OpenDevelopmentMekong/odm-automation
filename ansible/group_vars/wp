@@ -1,24 +1,24 @@
 ---
 wp_repos:
- - { path: '/var/www/html/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/Google-Analytics-Dashboard-for-WP/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/all-in-one-seo-pack/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/any-mobile-theme-switcher/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/broken-link-checker', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/json-rest-api/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/tablepress/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/taxonomy-terms-order/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/wordpress-importer/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master' }
- - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master' }
- - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master' }
- - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master'}
+ - { path: '/var/www/html/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/Google-Analytics-Dashboard-for-WP/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/all-in-one-seo-pack/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/any-mobile-theme-switcher/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/broken-link-checker', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/json-rest-api/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/tablepress/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/taxonomy-terms-order/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/wordpress-importer/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master', install_deps: true }
+ - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master', install_deps: true }
+ - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', install_deps: false }
+ - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master', install_deps: false}
 
 langs:
  - { origin: 'km', dest: 'km' }

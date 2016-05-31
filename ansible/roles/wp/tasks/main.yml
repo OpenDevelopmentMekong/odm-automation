@@ -4,6 +4,13 @@
     chdir: "{{ item.path }}"
   with_items: wp_repos
 
+- name: Install composer dependencies
+  shell: composer install
+  args:
+    chdir: "{{ item.path }}"
+  with_items: wp_repos
+  when: item.install_deps
+
 - name: Update Wordpress translations ( Merge .po files)
   shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/jeo-odm/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
