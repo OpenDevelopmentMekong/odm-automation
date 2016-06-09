@@ -12,7 +12,7 @@
   when: item.composer_deps
 
 - name: Install npm dependencies
-  shell: sudo npm install; sudo npm install -g bower; gulp
+  shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
   args:
     chdir: "{{ item.path }}"
   with_items: wp_repos

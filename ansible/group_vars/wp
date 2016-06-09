@@ -1,6 +1,6 @@
 ---
 wp_repos:
- - { path: '/var/www/html/', branch: 'master', composer_deps: false }
+ - { path: '/var/www/html/', branch: 'master', composer_deps: false , npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/Google-Analytics-Dashboard-for-WP/', branch: 'master', composer_deps: false , npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/all-in-one-seo-pack/', branch: 'master', composer_deps: false , npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/any-mobile-theme-switcher/', branch: 'master', composer_deps: false , npm_deps: false }
@@ -17,8 +17,11 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master', composer_deps: true , npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master', composer_deps: true , npm_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/wp-odm_profile_pages/', branch: 'master', composer_deps: true, npm_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: true, npm_deps: false }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false }
  - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master', composer_deps: false, npm_deps: false }
+ - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true }
 
 langs:
  - { origin: 'km', dest: 'km' }
