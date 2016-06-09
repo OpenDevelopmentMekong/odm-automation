@@ -5,11 +5,18 @@
   with_items: wp_repos
 
 - name: Install composer dependencies
-  shell: composer install
+  shell: composer install;
   args:
     chdir: "{{ item.path }}"
   with_items: wp_repos
-  when: item.install_deps
+  when: item.composer_deps
+
+- name: Install npm dependencies
+  shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
+  args:
+    chdir: "{{ item.path }}"
+  with_items: wp_repos
+  when: item.npm_deps
 
 - name: Update Wordpress translations ( Merge .po files)
   shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/jeo-odm/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
