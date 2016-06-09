@@ -1,4 +1,5 @@
 ---
 - hosts: wp
   roles:
+  - deps-wp
   - wp
