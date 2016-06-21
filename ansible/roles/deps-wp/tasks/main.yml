@@ -1,5 +1,5 @@
 - name: Install composer
-  shell: curl -s http://getcomposer.org/installer | php; sudo mv composer.phar /usr/local/bin/
+  shell: curl -s http://getcomposer.org/installer | php; sudo mv composer.phar /usr/local/bin/composer
 
 - name: Install node, npm and bower
   shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - ; sudo apt-get install -y nodejs; sudo install npm; sudo npm install bower -g
