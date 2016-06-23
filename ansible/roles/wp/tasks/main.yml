@@ -25,3 +25,6 @@
 - name: Update Wordpress translations ( Compile .mo file)
   shell: msgfmt -o /var/www/html/wp-content/languages/{{item.dest}}.mo /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
+
+- name: Set user and group for all files
+  file: path=/var/www/html/ owner=www-data group=www-data recurse=yes
