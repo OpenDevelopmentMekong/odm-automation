@@ -1,5 +1,5 @@
 - name: Download composer
-  get_url: url=https://getcomposer.org/composer.phar dest=/usr/local/bin/composer mode=0755
+  get_url: url=https://getcomposer.org/composer.phar dest=/usr/local/bin/composer mode=0755 force=yes
 
 - name: Install node, npm and bower
   shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - ; sudo apt-get install -y nodejs; sudo install npm; sudo npm install bower -g
