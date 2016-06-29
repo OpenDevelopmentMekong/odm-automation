@@ -19,6 +19,8 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master', composer_deps: true , npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_profile_pages/', branch: 'master', composer_deps: false, npm_deps: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: false, npm_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/ewww-image-optimizer/', branch: 'master', composer_deps: false, npm_deps: true }
+ - { path: '/var/www/html/wp-content/plugins/w3-total-cache/', branch: 'master', composer_deps: false, npm_deps: true }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false }
  - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master', composer_deps: false, npm_deps: false }
  - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true }
