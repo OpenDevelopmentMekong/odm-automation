@@ -5,7 +5,7 @@
   with_items: wp_repos
 
 - name: Install composer dependencies
-  shell: composer install;
+  shell: composer update;
   args:
     chdir: "{{ item.path }}"
   with_items: wp_repos
