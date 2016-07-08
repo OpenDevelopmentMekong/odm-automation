@@ -4,6 +4,10 @@
     chdir: "{{ item.path }}"
   with_items: wp_repos
 
+- name: Update Wordpress components using zip files
+  unarchive: src={{ item.installable }} dest={{ item.path }} copy=no owner=www-data group=www-data
+  with_items: wp_repos_zip
+
 - name: Install composer dependencies
   shell: composer update;
   args:
