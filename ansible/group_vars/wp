@@ -26,6 +26,6 @@ wp_repos_zip:
  - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false }
 
 langs:
- - { origin: 'km', dest: 'km' }
- - { origin: 'km', dest: 'kh' }
+ - { origin: 'km', dest: 'km'}
  - { origin: 'vi', dest: 'vi' }
+ - { origin: 'my', dest: 'my' }
