@@ -17,12 +17,12 @@
   sudo: yes
 
 - name: Install bower dependencies
-  shell: bower update;
+  shell: bower install --allow-root;
   args:
     chdir: "{{ item.path }}"
   with_items: wp_repos
   when: item.bower_deps
-  sudo: no
+  sudo: yes
 
 - name: Install npm dependencies
   shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
