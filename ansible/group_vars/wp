@@ -1,12 +1,9 @@
 ---
 wp_repos:
- - { path: '/var/www/html/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/Google-Analytics-Dashboard-for-WP/', branch: 'master', composer_deps: false , npm_deps: false, bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/all-in-one-seo-pack/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/any-mobile-theme-switcher/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/broken-link-checker', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/json-rest-api/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/tablepress/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
@@ -23,15 +20,14 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/ewww-image-optimizer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/w3-total-cache/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/themes/jeo-odm/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true , bower_deps: false }
 
 wp_repos_zip:
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://downloads.wordpress.org/plugin/wp-mail-smtp.0.9.6.zip', composer_deps: false, npm_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://downloads.wordpress.org/plugin/megamenu.2.2.1.zip', composer_deps: false, npm_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://downloads.wordpress.org/plugin/wp-mail-smtp.0.9.6.zip', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://downloads.wordpress.org/plugin/megamenu.2.2.1.zip', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false , bower_deps: false }
 
 langs:
- - { origin: 'km', dest: 'km' }
- - { origin: 'km', dest: 'kh' }
+ - { origin: 'km', dest: 'km'}
  - { origin: 'vi', dest: 'vi' }
+ - { origin: 'my', dest: 'my' }
