@@ -16,6 +16,14 @@
   when: item.composer_deps
   sudo: yes
 
+- name: Install bower dependencies
+  shell: bower update;
+  args:
+    chdir: "{{ item.path }}"
+  with_items: wp_repos
+  when: item.bower_deps
+  sudo: no
+
 - name: Install npm dependencies
   shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
   args:
