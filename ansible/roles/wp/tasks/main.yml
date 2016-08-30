@@ -16,6 +16,14 @@
   when: item.composer_deps
   sudo: yes
 
+- name: Install bower dependencies
+  shell: bower install --allow-root;
+  args:
+    chdir: "{{ item.path }}"
+  with_items: wp_repos
+  when: item.bower_deps
+  sudo: yes
+
 - name: Install npm dependencies
   shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
   args:
@@ -24,7 +32,7 @@
   when: item.npm_deps
 
 - name: Update Wordpress translations ( Merge .po files)
-  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/jeo-odm/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
+  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
 
 - name: Update Wordpress translations ( Compile .mo file)
