@@ -4,8 +4,15 @@
     chdir: "{{ item.path }}"
   with_items: wp_repos
 
+- name: Ensure tmp folder exists
+  file: path=/tmp/wp_repos_zip state=directory mode=0755
+
+- name: Download plugins as ZIP files
+  get_url: url={{ item.downloadable }}  dest=/tmp/wp_repos_zip/{{ item.installable }} mode=0755
+  with_items: wp_repos_zip
+
 - name: Update Wordpress components using zip files
-  unarchive: src={{ item.installable }} dest={{ item.path }} remote_src=no owner=www-data group=www-data
+  unarchive: src=/tmp/wp_repos_zip/{{ item.installable }} copy=no dest={{ item.path }} owner=www-data group=www-data
   with_items: wp_repos_zip
 
 - name: Install composer dependencies
