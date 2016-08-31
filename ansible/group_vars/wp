@@ -17,16 +17,16 @@ wp_repos:
  - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true , bower_deps: false }
 
 wp_repos_zip:
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tQkxDWHZCbHN5bWs', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tVV9McjR3ZGZIQXM', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tWGRiekl0SnhtWGc', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tVjFaY0pEWjdPd28', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tMnRsSUdCb3dhRk0', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tMzI1VFRFT3BCZVE', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4tV3BNMFJUakVsQzg', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/open?id=0B05SClhiPV4teUg3Ti11aDVnLUk', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tQkxDWHZCbHN5bWs', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVV9McjR3ZGZIQXM', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWGRiekl0SnhtWGc', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjFaY0pEWjdPd28', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tMnRsSUdCb3dhRk0', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tMzI1VFRFT3BCZVE', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tV3BNMFJUakVsQzg', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4teUg3Ti11aDVnLUk', composer_deps: false, npm_deps: false , bower_deps: false }
 
 langs:
  - { origin: 'km', dest: 'km'}
