@@ -5,7 +5,7 @@
   with_items: wp_repos
 
 - name: Update Wordpress components using zip files
-  unarchive: src={{ item.installable }} dest={{ item.path }} copy=no owner=www-data group=www-data
+  unarchive: src={{ item.installable }} dest={{ item.path }} remote_src=yes copy=no owner=www-data group=www-data
   with_items: wp_repos_zip
 
 - name: Install composer dependencies
