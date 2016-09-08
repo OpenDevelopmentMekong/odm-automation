@@ -38,6 +38,13 @@
   with_items: wp_repos
   when: item.npm_deps
 
+- name: Run gulp tasks
+  shell: gulp
+  args:
+    chdir: "{{ item.path }}"
+  with_items: wp_repos
+  when: item.run_gulp
+
 - name: Update Wordpress translations ( Merge .po files)
   shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
