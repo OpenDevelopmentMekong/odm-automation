@@ -55,3 +55,6 @@
 
 - name: Set user and group for all files
   file: path=/var/www/html/ owner=www-data group=www-data recurse=yes
+
+- name: Copy tinymce.min.js file to hack the wordpress editor so it does not trim
+  copy: src=tinymce.min.js dest=/var/www/html/wp-includes/js/tinymce/tinymce.min.js owner=www-data group=www-data
