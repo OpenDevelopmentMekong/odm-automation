@@ -27,6 +27,9 @@ wp_repos_zip:
  - { path: '/var/www/html/wp-content/plugins/', installable: 'taxonomy-terms-order.1.4.8.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tMzI1VFRFT3BCZVE', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'wordpress-importer.0.6.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tV3BNMFJUakVsQzg', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'wp-mail-smtp.0.9.6.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4teUg3Ti11aDVnLUk', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'user-role-editor.4.27.2.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tdFI5aDkxWnlyRDg', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'wordpress-mu-domain-mapping.0.5.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tUlUzdlU3Sm1FRWc', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'bnfw.1.5.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRnBlR0JvRllPdW8', composer_deps: false, npm_deps: false , bower_deps: false }
 
 langs:
  - { origin: 'km', dest: 'km'}
