@@ -1,52 +1,52 @@
-- name: Update Wordpress components using git
-  shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}} ;git submodule init; git submodule update; git checkout {{item.branch}};
-  args:
-    chdir: "{{ item.path }}"
-  with_items: wp_repos
-
-- name: Ensure tmp folder exists
-  file: path=/tmp/wp_repos_zip state=directory mode=0755
-
-- name: Download plugins as ZIP files
-  get_url: url={{ item.downloadable }}  dest=/tmp/wp_repos_zip/{{ item.installable }} mode=0755
-  with_items: wp_repos_zip
-
-- name: Update Wordpress components using zip files
-  unarchive: src=/tmp/wp_repos_zip/{{ item.installable }} copy=no dest={{ item.path }} owner=www-data group=www-data
-  with_items: wp_repos_zip
-
-- name: Install composer dependencies
-  shell: composer update;
-  args:
-    chdir: "{{ item.path }}"
-  with_items: wp_repos
-  when: item.composer_deps
-  sudo: yes
-
-- name: Install bower dependencies
-  shell: bower install --allow-root;
-  args:
-    chdir: "{{ item.path }}"
-  with_items: wp_repos
-  when: item.bower_deps
-  sudo: yes
-
-- name: Install npm dependencies
-  shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
-  args:
-    chdir: "{{ item.path }}"
-  with_items: wp_repos
-  when: item.npm_deps
-
-- name: Run gulp tasks
-  shell: gulp
-  args:
-    chdir: "{{ item.path }}"
-  with_items: wp_repos
-  when: item.run_gulp
+# - name: Update Wordpress components using git
+#   shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}} ;git submodule init; git submodule update; git checkout {{item.branch}};
+#   args:
+#     chdir: "{{ item.path }}"
+#   with_items: wp_repos
+#
+# - name: Ensure tmp folder exists
+#   file: path=/tmp/wp_repos_zip state=directory mode=0755
+#
+# - name: Download plugins as ZIP files
+#   get_url: url={{ item.downloadable }}  dest=/tmp/wp_repos_zip/{{ item.installable }} mode=0755
+#   with_items: wp_repos_zip
+#
+# - name: Update Wordpress components using zip files
+#   unarchive: src=/tmp/wp_repos_zip/{{ item.installable }} copy=no dest={{ item.path }} owner=www-data group=www-data
+#   with_items: wp_repos_zip
+#
+# - name: Install composer dependencies
+#   shell: composer update;
+#   args:
+#     chdir: "{{ item.path }}"
+#   with_items: wp_repos
+#   when: item.composer_deps
+#   sudo: yes
+#
+# - name: Install bower dependencies
+#   shell: bower install --allow-root;
+#   args:
+#     chdir: "{{ item.path }}"
+#   with_items: wp_repos
+#   when: item.bower_deps
+#   sudo: yes
+#
+# - name: Install npm dependencies
+#   shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
+#   args:
+#     chdir: "{{ item.path }}"
+#   with_items: wp_repos
+#   when: item.npm_deps
+#
+# - name: Run gulp tasks
+#   shell: gulp
+#   args:
+#     chdir: "{{ item.path }}"
+#   with_items: wp_repos
+#   when: item.run_gulp
 
 - name: Update Wordpress translations ( Merge .po files)
-  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
+  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
 
 - name: Update Wordpress translations ( Compile .mo file)
