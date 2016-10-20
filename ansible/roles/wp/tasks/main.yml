@@ -46,7 +46,7 @@
   when: item.run_gulp
 
 - name: Update Wordpress translations ( Merge .po files)
-  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
+  shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
 
 - name: Update Wordpress translations ( Compile .mo file)
