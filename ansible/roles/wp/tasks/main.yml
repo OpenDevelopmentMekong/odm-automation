@@ -45,16 +45,27 @@
   with_items: wp_repos
   when: item.run_gulp
 
-- name: Update Wordpress translations ( Merge .po files)
+- name: Update Wordpress translations ( Merge .po files) - themes
   shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
 
-- name: Update Wordpress translations ( Compile .mo file)
+- name: Update Wordpress translations ( Compile .mo file) - themes
   shell: msgfmt -o /var/www/html/wp-content/languages/{{item.dest}}.mo /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: langs
 
-- name: Set user and group for all files
-  file: path=/var/www/html/ owner=www-data group=www-data recurse=yes
+- name: Update Wordpress translations ( Compile .mo file) - profiles
+  shell: msgfmt -o /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.mo /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.po
+  with_items: langs
+
+- name: Update Wordpress translations ( Compile .mo file) - tabular
+  shell: msgfmt -o /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.mo /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po
+  with_items: langs
+
+- name: Set user and group for all files in plugins
+  file: path=/var/www/html/wp-content/plugins owner=www-data group=www-data recurse=yes
+
+- name: Set user and group for all files in themes
+  file: path=/var/www/html/wp-content/themes owner=www-data group=www-data recurse=yes
 
 - name: Copy tinymce.min.js file to hack the wordpress editor so it does not trim
   copy: src=tinymce.min.js dest=/var/www/html/wp-includes/js/tinymce/tinymce.min.js owner=www-data group=www-data
