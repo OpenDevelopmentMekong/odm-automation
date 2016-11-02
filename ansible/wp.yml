@@ -1,5 +1,43 @@
 ---
 - hosts: wp
+  vars:
+    wp_repos:
+     - { path: '/var/www/html/wp-content/plugins/broken-link-checker', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wp-odm_profile_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
+     - { path: '/var/www/html/wp-content/plugins/w3-total-cache/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+     - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true , bower_deps: false, run_gulp: true }
+
+    wp_repos_zip:
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'all-in-one-seo-pack.2.3.9.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'ewww-image-optimizer.2.9.6.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tQkxDWHZCbHN5bWs', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'featuredarticles-pro v3.1.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVV9McjR3ZGZIQXM', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'google-analytics-dashboard-for-wp.4.9.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWGRiekl0SnhtWGc', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu-pro-1.4.5.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu.2.2.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjFaY0pEWjdPd28', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'tablepress.1.7.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tMnRsSUdCb3dhRk0', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'taxonomy-terms-order.1.4.8.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tMzI1VFRFT3BCZVE', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'wordpress-importer.0.6.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tV3BNMFJUakVsQzg', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'wp-mail-smtp.0.9.6.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4teUg3Ti11aDVnLUk', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'user-role-editor.4.27.2.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tdFI5aDkxWnlyRDg', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'wordpress-mu-domain-mapping.0.5.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tUlUzdlU3Sm1FRWc', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'bnfw.1.5.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRnBlR0JvRllPdW8', composer_deps: false, npm_deps: false , bower_deps: false }
+     - { path: '/var/www/html/wp-content/plugins/', installable: 'wp-page-widget.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tSk94aHVBbTNFekk', composer_deps: false, npm_deps: false , bower_deps: false }
+
+    langs:
+     - { origin: 'km', dest: 'km' }
+     - { origin: 'vi', dest: 'vi' }
+     - { origin: 'my', dest: 'my' }
   roles:
   - deps-wp
   - wp
