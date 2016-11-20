@@ -9,6 +9,7 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { path: '/var/www/html/wp-content/plugins/reference-footnotes/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_profile_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
