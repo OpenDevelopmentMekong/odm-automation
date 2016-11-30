@@ -2,4 +2,4 @@
 wp ansible_port=32770 ansible_host=119.81.30.165
 
 [ckan]
-ckan ansible_port=32821 ansible_host=119.81.30.162
+ckan ansible_port=32854 ansible_host=119.81.123.152
