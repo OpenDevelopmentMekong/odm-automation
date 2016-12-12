@@ -20,7 +20,7 @@ wp_repos:
 
 wp_repos_zip:
  - { path: '/var/www/html/wp-content/plugins/', installable: 'all-in-one-seo-pack.2.3.9.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
- - { path: '/var/www/html/wp-content/plugins/', installable: 'ewww-image-optimizer.2.9.6.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tQkxDWHZCbHN5bWs', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'ewww-image-optimizer.3.1.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4taFhZVURVOVhmMlk', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'featuredarticles-pro v3.1.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVV9McjR3ZGZIQXM', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'google-analytics-dashboard-for-wp.4.9.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWGRiekl0SnhtWGc', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu-pro-1.4.5.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjM0cHBRVDQ0N2c', composer_deps: false, npm_deps: false , bower_deps: false }
