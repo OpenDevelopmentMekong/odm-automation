@@ -14,7 +14,6 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_related/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/w3-total-cache/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true , bower_deps: false, run_gulp: true }
 
@@ -33,6 +32,7 @@ wp_repos_zip:
  - { path: '/var/www/html/wp-content/plugins/', installable: 'wordpress-mu-domain-mapping.0.5.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tUlUzdlU3Sm1FRWc', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'bnfw.1.5.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRnBlR0JvRllPdW8', composer_deps: false, npm_deps: false , bower_deps: false }
  - { path: '/var/www/html/wp-content/plugins/', installable: 'wp-page-widget.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tSk94aHVBbTNFekk', composer_deps: false, npm_deps: false , bower_deps: false }
+ - { path: '/var/www/html/wp-content/plugins/', installable: 'w3-total-cache.0.9.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRXVSNk1rUzdMRHc', composer_deps: false, npm_deps: false , bower_deps: false }
 
 langs:
  - { origin: 'km', dest: 'km' }
