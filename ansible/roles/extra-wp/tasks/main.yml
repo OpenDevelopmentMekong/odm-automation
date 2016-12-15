@@ -5,7 +5,7 @@
   copy: src=w3tc_admin_url.patch dest=/tmp/w3tc_admin_url.patch owner=www-data group=www-data mode=0755
 
 - name: apply patch to w3tc
-  shell: patch < w3tc_admin_url.patch -d /var/www/html/wp-content/plugins/w3-total-cache
+  shell: patch < w3tc_admin_url.patch -d /var/www/html/wp-content/plugins/w3-total-cache -R
   args:
     chdir: /tmp/
   
