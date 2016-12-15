@@ -64,6 +64,10 @@
 - name: Update Wordpress translations ( Compile .mo file) - tabular
   shell: msgfmt -o /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.mo /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po
   with_items: "{{ langs }}"
+  
+- name: Update Wordpress translations ( Compile .mo file) - wpckan
+  shell: msgfmt -o /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.mo /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.po
+  with_items: "{{ langs }}"
 
 - name: Set user and group for all files in plugins
   file: path=/var/www/html/wp-content/plugins owner=www-data group=www-data recurse=yes

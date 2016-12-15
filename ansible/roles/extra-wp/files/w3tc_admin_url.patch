@@ -1,0 +1,45 @@
+diff -Naur w3-total-cache/DbCache_Plugin.php w3-total-cache-fixed/DbCache_Plugin.php
+--- w3-total-cache/DbCache_Plugin.php	2016-09-30 03:06:56.000000000 +0700
++++ w3-total-cache-fixed/DbCache_Plugin.php	2016-12-15 17:07:17.000000000 +0700
+@@ -211,7 +211,7 @@
+ 			'id' => 'w3tc_flush_dbcache',
+ 			'parent' => 'w3tc_flush',
+ 			'title' => __( 'Database', 'w3-total-cache' ),
+-			'href' => wp_nonce_url( network_admin_url(
++			'href' => wp_nonce_url( admin_url(
+ 					'admin.php?page=w3tc_dashboard&amp;w3tc_flush_dbcache' ),
+ 				'w3tc' )
+ 		);
+diff -Naur w3-total-cache/ObjectCache_Plugin.php w3-total-cache-fixed/ObjectCache_Plugin.php
+--- w3-total-cache/ObjectCache_Plugin.php	2016-09-30 03:06:56.000000000 +0700
++++ w3-total-cache-fixed/ObjectCache_Plugin.php	2016-12-15 17:06:35.000000000 +0700
+@@ -269,7 +269,7 @@
+ 			'id' => 'w3tc_flush_objectcache',
+ 			'parent' => 'w3tc_flush',
+ 			'title' => __( 'Object Cache', 'w3-total-cache' ),
+-			'href' => wp_nonce_url( network_admin_url(
++			'href' => wp_nonce_url( admin_url(
+ 					'admin.php?page=w3tc_dashboard&amp;w3tc_flush_objectcache' ), 'w3tc' )
+ 		);
+ 
+diff -Naur w3-total-cache/PgCache_Plugin.php w3-total-cache-fixed/PgCache_Plugin.php
+--- w3-total-cache/PgCache_Plugin.php	2016-09-30 03:06:56.000000000 +0700
++++ w3-total-cache-fixed/PgCache_Plugin.php	2016-12-15 17:06:17.000000000 +0700
+@@ -238,7 +238,7 @@
+ 			'id' => 'w3tc_flush_pgcache',
+ 			'parent' => 'w3tc_flush',
+ 			'title' => __( 'Page Cache: All', 'w3-total-cache' ),
+-			'href' => wp_nonce_url( network_admin_url(
++			'href' => wp_nonce_url( admin_url(
+ 					'admin.php?page=w3tc_dashboard&amp;w3tc_flush_pgcache' ),
+ 				'w3tc' )
+ 		);
+@@ -248,7 +248,7 @@
+ 				'id' => 'w3tc_pgcache_flush_post',
+ 				'parent' => 'w3tc_flush',
+ 				'title' => __( 'Page Cache: Current Page', 'w3-total-cache' ),
+-				'href' => wp_nonce_url( network_admin_url(
++				'href' => wp_nonce_url( admin_url(
+ 						'admin.php?page=w3tc_dashboard&amp;w3tc_flush_post&amp;post_id=' .
+ 						Util_Environment::detect_post_id() ), 'w3tc' )
+ 			);
