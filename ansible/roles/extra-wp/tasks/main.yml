@@ -4,10 +4,15 @@
 - name: Copy w3tc_admin_url.patch to tmp folder
   copy: src=w3tc_admin_url.patch dest=/tmp/w3tc_admin_url.patch owner=www-data group=www-data mode=0755
 
+- command: patch -R --dry-run -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
+  register: patch_applied
+  ignore_errors: True
+    
 - name: apply patch to w3tc
-  shell: patch < w3tc_admin_url.patch -d /var/www/html/wp-content/plugins/w3-total-cache -R
+  shell: patch -R -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch 
   args:
     chdir: /tmp/
+  when: patch_applied|succeeded
   
 - name: Clear /cache folder
   shell: rm -rf /cache/*
