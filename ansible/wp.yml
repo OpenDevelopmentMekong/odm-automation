@@ -1,6 +1,6 @@
 ---
 - hosts: wp
   roles:
-  #- deps-wp
-  #- wp
+  - deps-wp
+  - wp
   - extra-wp
