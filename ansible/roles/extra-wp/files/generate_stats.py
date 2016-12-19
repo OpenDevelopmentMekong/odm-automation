@@ -33,7 +33,7 @@ def analyzeItem(config,node,parent_name):
 
 existing_keys = []
 config = {
-"config":[["Topic", "Parent", "Number"],["All",None,0]]
+"config":[["All",None,0]]
 }
 
 response = urllib.urlopen(url)
