@@ -10,12 +10,12 @@ url = 'https://raw.githubusercontent.com/OpenDevelopmentMekong/odm-taxonomy/mast
 def getNumberOfRecordsByTaxonomy(name):
     
     url = 'https://data.opendevelopmentmekong.net/api/3/action/package_search?fq=extras_taxonomy:"' + name + '"';
-    if (sys.argv[2] != 'all'):
-        url + = '&extras_odm_spatial_range:' + sys.argv[2];
-        
+    if sys.argv[2] != 'all':
+        url =  url + '+extras_odm_spatial_range:' + sys.argv[2];
+    
     response = urllib.urlopen(url)
     data = json.loads(response.read())
-    
+
     return data['result']['count']
 
 def analyzeItem(config,node,parent_name):
