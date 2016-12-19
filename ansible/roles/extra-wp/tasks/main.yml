@@ -28,7 +28,32 @@
 - name: Generating stats, copying script to tmp folder
   copy: src=generate_stats.py dest=/tmp/generate_stats.py owner=www-data group=www-data mode=0755
   
-- name: Execute script
-  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy.json
+- name: Execute script for ODM
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_mekong.json all
+  args:
+    chdir: /tmp/
+    
+- name: Execute script for ODC
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_kh.json kh
+  args:
+    chdir: /tmp/
+        
+- name: Execute script for ODMm
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_mm.json mm
+  args:
+    chdir: /tmp/
+    
+- name: Execute script for ODV
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_vn.json vn
+  args:
+    chdir: /tmp/
+    
+- name: Execute script for ODT
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_th.json th
+  args:
+    chdir: /tmp/
+    
+- name: Execute script for ODL
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_la.json la
   args:
     chdir: /tmp/

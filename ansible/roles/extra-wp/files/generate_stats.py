@@ -2,14 +2,17 @@ import urllib
 import json
 import sys
 
-if len(sys.argv) < 1 and len(sys.argv) > 2:
-    print 'USAGE python generate_stats.py OUTPUT_FILE'
+if len(sys.argv) < 1 or len(sys.argv) > 3:
+    print 'USAGE python generate_stats.py OUTPUT_FILE COUNTRY_CODE'
 
 url = 'https://raw.githubusercontent.com/OpenDevelopmentMekong/odm-taxonomy/master/taxonomy_en.json'
 
 def getNumberOfRecordsByTaxonomy(name):
     
-    url = 'https://data.opendevelopmentmekong.net/api/3/action/package_search?fq=extras_taxonomy:"' + name + '"'
+    url = 'https://data.opendevelopmentmekong.net/api/3/action/package_search?fq=extras_taxonomy:"' + name + '"';
+    if (sys.argv[2] != 'all'){
+        url + = '&extras_odm_spatial_range:' + sys.argv[2];
+    }  
     response = urllib.urlopen(url)
     data = json.loads(response.read())
     
