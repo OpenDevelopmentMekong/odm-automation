@@ -1,6 +1,3 @@
-- name: Ensure tmp folder exists
-  file: path=/tmp/wp_repos_zip state=directory mode=0755
-
 - name: Copy w3tc_admin_url.patch to tmp folder
   copy: src=w3tc_admin_url.patch dest=/tmp/w3tc_admin_url.patch owner=www-data group=www-data mode=0755
 

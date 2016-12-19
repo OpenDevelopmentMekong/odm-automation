@@ -6,3 +6,6 @@
 
 - name: Install gettext
   shell: sudo apt-get install -y gettext; 
+  
+- name: Ensure tmp folder exists
+  file: path=/tmp/wp_repos_zip state=directory mode=0755

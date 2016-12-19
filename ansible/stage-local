@@ -1,5 +1,5 @@
-[wp-group]
+[wp-dev]
 wp ansible_port=22 ansible_host=192.168.33.10
 
-[ckan-group]
+[ckan-dev]
 ckan ansible_port=22 ansible_host=192.168.33.10
