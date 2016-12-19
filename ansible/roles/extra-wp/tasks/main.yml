@@ -19,3 +19,16 @@
   
 - name: Clear /tmp/wp_repos_zip
   shell: rm -rf /tmp/wp_repos_zip/*
+  
+# Statistics 
+
+- name: Ensure stats folder exists
+  file: path=/var/www/html/stats/ state=directory mode=0755
+
+- name: Generating stats, copying script to tmp folder
+  copy: src=generate_stats.py dest=/tmp/generate_stats.py owner=www-data group=www-data mode=0755
+  
+- name: Execute script
+  shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy.json
+  args:
+    chdir: /tmp/
