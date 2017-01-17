@@ -4,52 +4,60 @@
 - command: patch -R --dry-run -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
   register: patch_applied
   ignore_errors: True
-    
+
 - name: apply patch to w3tc
-  shell: patch -R -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch 
+  shell: patch -R -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
   args:
     chdir: /tmp/
   when: patch_applied|succeeded
-  
+
 - name: Clear /cache folder
   shell: rm -rf /cache/*
-  
+
 - name: Clear /tmp/wp_repos_zip
   shell: rm -rf /tmp/wp_repos_zip/*
-  
-# Statistics 
 
-# - name: Ensure stats folder exists
-#   file: path=/var/www/html/stats/ state=directory mode=0755
-# 
+# Statistics
+
+- name: Ensure stats folder exists
+  file: path=/var/www/html/stats/ state=directory mode=0755
+
+- name: Generating stats, copying scripts to tmp folder
+  copy: src=generate_top_tier_taxonomic_terms.py dest=/tmp/generate_top_tier_taxonomic_terms.py owner=www-data group=www-data mode=0755
+
+- name: Execute generate_top_tier_taxonomic_terms.py
+  shell: python generate_top_tier_taxonomic_terms.py /var/www/html/stats/top_tier_taxonomic_terms.json
+  args:
+    chdir: /tmp/
+
 # - name: Generating stats, copying script to tmp folder
 #   copy: src=generate_stats.py dest=/tmp/generate_stats.py owner=www-data group=www-data mode=0755
-#   
+#
 # - name: Execute script for ODM
 #   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_mekong.json all
 #   args:
 #     chdir: /tmp/
-#     
+#
 # - name: Execute script for ODC
 #   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_kh.json kh
 #   args:
 #     chdir: /tmp/
-#         
+#
 # - name: Execute script for ODMm
 #   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_mm.json mm
 #   args:
 #     chdir: /tmp/
-#     
+#
 # - name: Execute script for ODV
 #   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_vn.json vn
 #   args:
 #     chdir: /tmp/
-#     
+#
 # - name: Execute script for ODT
 #   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_th.json th
 #   args:
 #     chdir: /tmp/
-#     
+#
 # - name: Execute script for ODL
 #   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_la.json la
 #   args:
