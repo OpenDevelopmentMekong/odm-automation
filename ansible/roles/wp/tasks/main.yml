@@ -16,7 +16,7 @@
   with_items: "{{ wp_repos_zip }}"
 
 - name: Install composer dependencies
-  shell: composer update;
+  shell: rm -rf vendor; composer update;
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
