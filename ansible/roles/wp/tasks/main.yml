@@ -58,15 +58,15 @@
   with_items: "{{ langs }}"
 
 - name: Ensure there are no duplicates - profiles
-  shell: msguniq --unique /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/{{item.origin}}.po -o /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/{{item.origin}}.po
+  shell: msguniq --unique /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.po -o /var/www/html/wp-content/plugins/wp-odm_profile_pages/i18n/wp-odm_profile_pages-{{item.origin}}.po
   with_items: "{{ langs }}"
 
 - name: Ensure there are no duplicates - tabular
-  shell: msguniq --unique /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/{{item.origin}}.po -o /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/{{item.origin}}.po
+  shell: msguniq --unique /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po -o /var/www/html/wp-content/plugins/wp-odm_tabular_pages/i18n/wp-odm_tabular_pages-{{item.origin}}.po
   with_items: "{{ langs }}"
 
 - name: Ensure there are no duplicates - wpckan
-  shell: msguniq --unique /var/www/html/wp-content/plugins/wpckan/i18n/{{item.origin}}.po -o /var/www/html/wp-content/plugins/wpckan/i18n/{{item.origin}}.po
+  shell: msguniq --unique /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.po -o /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.po
   with_items: "{{ langs }}"
 
 - name: Update Wordpress translations ( Merge .po files) - themes
