@@ -5,7 +5,7 @@ ckan_repos:
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_dataset', name: 'ckanext-odm_dataset', branch: 'prod' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_library', name: 'ckanext-odm_library', branch: 'prod' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_laws', name: 'ckanext-odm_laws', branch: 'prod' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_agreement', name: 'ckanext-odm_agreement', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_agreement', name: 'ckanext-odm_agreement', branch: 'prod' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_nav', name: 'ckanext-odm_nav', branch: 'prod' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_audit', name: 'ckanext-odm_audit', branch: 'prod' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_migration', name: 'ckanext-odm_migration', branch: 'prod' }
