@@ -10,6 +10,7 @@ ckan_repos:
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_audit', name: 'ckanext-odm_audit', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_migration', name: 'ckanext-odm_migration', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-issues', name: 'ckanext-issues', branch: 'master' }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-sitemap', name: 'ckanext-sitemap', branch: 'master' }
 
 langs:
  - { origin: 'km', dest: 'km' }
