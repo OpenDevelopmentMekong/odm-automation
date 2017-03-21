@@ -15,6 +15,7 @@ wp_repos:
  - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
  - { path: '/var/www/html/wp-content/plugins/wp-odm_related/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { path: '/var/www/html/wp-content/plugins/wp-odm_solr/', branch: 'master', composer_deps: true, npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
  - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: false, npm_deps: true , bower_deps: false, run_gulp: true }
 
