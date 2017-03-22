@@ -12,8 +12,10 @@
   with_items: "{{ wp_repos_zip }}"
 
 - name: Update Wordpress components using zip files
-  unarchive: src=/tmp/wp_repos_zip/{{ item.installable }} copy=no dest={{ item.path }} owner=www-data group=www-data
+  shell: unzip {{ item.installable }}
   with_items: "{{ wp_repos_zip }}"
+  args:
+    chdir: "{{ item.path }}"
 
 - name: Install composer dependencies
   shell: rm -rf vendor; composer update;
