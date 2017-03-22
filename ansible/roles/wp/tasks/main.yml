@@ -69,6 +69,10 @@
   shell: msguniq --unique /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.po -o /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.po
   with_items: "{{ langs }}"
 
+- name: Ensure there are no duplicates - wp-odm_user_feedback
+  shell: msguniq --unique /var/www/html/wp-content/plugins/wp-odm_user_feedback/i18n/wp-odm_user_feedback-{{item.origin}}.po -o /var/www/html/wp-content/plugins/wp-odm_user_feedback/i18n/wp-odm_user_feedback-{{item.origin}}.po
+  with_items: "{{ langs }}"
+
 - name: Update Wordpress translations ( Merge .po files) - themes
   shell: msgcat /var/www/html/wp-content/themes/jeo/i18n/{{item.origin}}.po /var/www/html/wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po -o /var/www/html/wp-content/languages/{{item.dest}}.po
   with_items: "{{ langs }}"
@@ -87,6 +91,10 @@
 
 - name: Update Wordpress translations ( Compile .mo file) - wpckan
   shell: msgfmt -o /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.mo /var/www/html/wp-content/plugins/wpckan/i18n/wpckan-{{item.origin}}.po
+  with_items: "{{ langs }}"
+
+- name: Update Wordpress translations ( Compile .mo file) - wp-odm_user_feedback
+  shell: msgfmt -o /var/www/html/wp-content/plugins/wp-odm_user_feedback/i18n/wp-odm_user_feedback-{{item.origin}}.mo /var/www/html/wp-content/plugins/wp-odm_user_feedback/i18n/wp-odm_user_feedback-{{item.origin}}.po
   with_items: "{{ langs }}"
 
 - name: Set user and group for all files in plugins
