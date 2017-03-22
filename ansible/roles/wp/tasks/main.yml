@@ -12,7 +12,7 @@
   with_items: "{{ wp_repos_zip }}"
 
 - name: Update Wordpress components using zip files
-  shell: unzip {{ item.installable }}
+  shell: unzip /tmp/wp_repos_zip/{{ item.installable }} -d ./
   with_items: "{{ wp_repos_zip }}"
   args:
     chdir: "{{ item.path }}"
