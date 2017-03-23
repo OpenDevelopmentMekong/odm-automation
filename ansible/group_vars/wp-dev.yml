@@ -37,6 +37,7 @@ wp_repos_zip:
  #- { path: '/var/www/html/wp-content/plugins/', installable: 'w3-total-cache.0.9.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRXVSNk1rUzdMRHc', composer_deps: false, npm_deps: false , bower_deps: false }
  #- { path: '/var/www/html/wp-content/plugins/', installable: 'posts-and-users-stats.1.0.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4td1lvU0hSbEVvUHc', composer_deps: false, npm_deps: false , bower_deps: false }
 
+
 langs:
  - { origin: 'km', dest: 'km' }
  - { origin: 'vi', dest: 'vi' }
