@@ -35,7 +35,7 @@
   when: item.npm_deps
 
 - name: Install bower dependencies
-  shell: node node_modules/bower/bin/bower install --allow-root;
+  shell: bower install --allow-root;
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
