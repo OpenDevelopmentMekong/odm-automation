@@ -27,8 +27,15 @@
   become_user: root
   become_method: sudo
 
+- name: Install npm dependencies
+  shell: sudo npm install;
+  args:
+    chdir: "{{ item.path }}"
+  with_items: "{{ wp_repos }}"
+  when: item.npm_deps
+
 - name: Install bower dependencies
-  shell: bower install --allow-root;
+  shell: node node_modules/bower/bin/bower install --allow-root;
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
@@ -37,15 +44,8 @@
   become_user: root
   become_method: sudo
 
-- name: Install npm dependencies
-  shell: sudo npm install; node node_modules/bower/bin/bower install --allow-root; node node_modules/gulp/bin/gulp.js
-  args:
-    chdir: "{{ item.path }}"
-  with_items: "{{ wp_repos }}"
-  when: item.npm_deps
-
 - name: Run gulp tasks
-  shell: gulp
+  shell: node node_modules/gulp/bin/gulp.js
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
