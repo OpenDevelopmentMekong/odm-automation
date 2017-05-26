@@ -1,5 +1,5 @@
 [wp-prod]
-wp ansible_port=39304 ansible_host=119.81.30.162
+wp ansible_port=39304 ansible_host=119.81.30.166
 
 [ckan-prod]
 ckan ansible_port=32868 ansible_host=119.81.123.152
