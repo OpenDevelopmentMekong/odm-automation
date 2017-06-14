@@ -1,0 +1,5 @@
+[wp-vm]
+wp ansible_port=22 ansible_host=192.168.1.38
+
+[ckan-vm]
+ckan ansible_port=22 ansible_host=192.168.1.38
