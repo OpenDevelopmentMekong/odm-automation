@@ -22,7 +22,7 @@ wp_repos:
 wp_repos_zip:
   - { path: '/var/www/html/wp-content/plugins/', installable: 'all-in-one-seo-pack.2.3.9.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'ewww-image-optimizer.3.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVm1Sek5IanEtR00', composer_deps: false, npm_deps: false , bower_deps: false }
-  - { path: '/var/www/html/wp-content/plugins/', installable: 'featuredarticles-pro.3.1.5.5.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tSExCazc0YzVZRFE', composer_deps: false, npm_deps: false , bower_deps: false }
+  #- { path: '/var/www/html/wp-content/plugins/', installable: 'featuredarticles-pro.3.1.5.5.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tSExCazc0YzVZRFE', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'google-analytics-dashboard-for-wp.4.9.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWGRiekl0SnhtWGc', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu-pro-1.6.2.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tN0U1T3BUVHl2azQ', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu.2.2.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjFaY0pEWjdPd28', composer_deps: false, npm_deps: false , bower_deps: false }
@@ -35,7 +35,7 @@ wp_repos_zip:
   - { path: '/var/www/html/wp-content/plugins/', installable: 'bnfw.1.5.3.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRnBlR0JvRllPdW8', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'wp-page-widget.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tSk94aHVBbTNFekk', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'social-warfare.2.2.6.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tSEhjT0FtNFlLUEE', composer_deps: false, npm_deps: false , bower_deps: false }
- #- { path: '/var/www/html/wp-content/plugins/', installable: 'w3-total-cache.0.9.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRXVSNk1rUzdMRHc', composer_deps: false, npm_deps: false , bower_deps: false }
+  - { path: '/var/www/html/wp-content/plugins/', installable: 'w3-total-cache.0.9.5.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tRXVSNk1rUzdMRHc', composer_deps: false, npm_deps: false , bower_deps: false }
  #- { path: '/var/www/html/wp-content/plugins/', installable: 'posts-and-users-stats.1.0.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4td1lvU0hSbEVvUHc', composer_deps: false, npm_deps: false , bower_deps: false }
 
 langs:

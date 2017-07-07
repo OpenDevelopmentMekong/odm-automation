@@ -65,12 +65,10 @@
 
 - name: Ensure i18n folder exists
   file: path=/var/www/html/i18n/ state=directory mode=0755
-  
-- name: Clean i18n directory
-  shell: rm *.po
-  args:
-    chdir: /var/www/html/i18n/
 
+- name: Clean i18n directory
+  file: path=/var/www/html/i18n/*.po state=absent
+  
 - name: Copy script to i18n folder
   copy: src=gather_translations.sh dest=/var/www/html/i18n/gather_translations.sh owner=www-data group=www-data mode=0755
 
