@@ -76,7 +76,7 @@
   copy: src=gather_translations.sh dest=/var/www/html/i18n/gather_translations.sh owner=www-data group=www-data mode=0755
 
 - name: Execute gather_translations.sh
-  shell: ./gather_translations.sh 1/964cea33c7b1409295ef4229332ec44c135b65a6
+  shell: ./gather_translations.sh 1/4e820b74232a765bd25e94a54435266a3cd25f64
   args:
     chdir: /var/www/html/i18n/
     
