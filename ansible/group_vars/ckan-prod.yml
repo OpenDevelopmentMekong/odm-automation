@@ -1,5 +1,6 @@
 ---
 ckan_repos:
+ #- { url: 'https://github.com/ckan/ckanext-dcat.git', name: 'ckanext-dcat', branch: 'master' }
  - { url: 'https://github.com/open-data/ckanext-scheming', name: 'ckanext-scheming', branch: 'master' }
  - { url: 'https://github.com/ckan/ckanext-fluent', name: 'ckanext-fluent', branch: 'master' }
  - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_dataset', name: 'ckanext-odm_dataset', branch: 'prod' }
