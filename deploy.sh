@@ -11,7 +11,7 @@ if [ -z "$2" ]; then
 fi
 
 if [[ "$2" == "local" ]]; then
-  ansible-playbook ansible/$1.yml -i ansible/stage-$2 --connection=local -vvvv
+  ansible-playbook ansible/$1.yml -i ansible/stage-$2 -u root --connection=local -vvvv
 else
   ansible-playbook ansible/$1.yml -i ansible/stage-$2 -u root -vvv
 fi
