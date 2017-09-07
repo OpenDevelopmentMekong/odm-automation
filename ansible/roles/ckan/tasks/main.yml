@@ -17,3 +17,4 @@
 
 - name: Restarting ckan
   shell: touch /run/uwsgi-reload
+  sudo: yes
