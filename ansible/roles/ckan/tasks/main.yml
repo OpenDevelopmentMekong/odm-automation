@@ -1,6 +1,7 @@
 - name: Updating ckan components
   shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: "{{ ckan_repos }}"
+  sudo: yes
 
 - name: Ensure there are no duplicates
   shell: msguniq --unique /usr/local/lib/python2.7/dist-packages/ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o /usr/local/lib/python2.7/dist-packages/ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
