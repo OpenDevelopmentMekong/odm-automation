@@ -20,4 +20,4 @@ langs:
  - { origin: 'vi', dest: 'vi' }
  - { origin: 'th', dest: 'th' }
 
-ckan_path: /usr/local/lib/python2.7/dist-packages/ckan/
+ckan_path:  /home/vagrant/src/ckan/ckan/
