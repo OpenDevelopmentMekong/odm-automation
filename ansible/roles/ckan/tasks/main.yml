@@ -8,7 +8,7 @@
 - name: Python setup develop and
   shell: source {{ckan_env}}/bin/activate && python setup.py develop executable=/bin/bash
   args:
-    chdir: "{{virtual_envs}}/ckan/src/{{ item.name }}"
+    chdir: "{{virtual_envs}}/ckan/src/{{ item.folder }}"
   with_items: "{{ ckan_repos }}"
   when: local_env
 
