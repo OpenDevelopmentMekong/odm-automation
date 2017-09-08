@@ -1,5 +1,5 @@
 ---
 - hosts: ckan
   roles:
-  #- deps-ckan
+  - deps-ckan
   - ckan
