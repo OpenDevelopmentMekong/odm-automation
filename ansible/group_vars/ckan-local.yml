@@ -1,18 +1,18 @@
 ---
 ckan_repos:
  #- { url: 'https://github.com/ckan/ckanext-dcat.git', name: 'ckanext-dcat', branch: 'master' }
- - { url: 'https://github.com/open-data/ckanext-scheming', name: 'ckanext-scheming', branch: 'master', folder: 'ckanext-scheming' }
- - { url: 'https://github.com/ckan/ckanext-fluent', name: 'ckanext-fluent', branch: 'master', folder: 'ckanext-fluent' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_dataset', name: 'ckanext-odm_dataset', branch: 'master', folder: 'ckanext-odm-dataset' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_library', name: 'ckanext-odm_library', branch: 'master', folder: 'ckanext-odm-library' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_laws', name: 'ckanext-odm_laws', branch: 'master', folder: 'ckanext-odm-laws' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_agreement', name: 'ckanext-odm_agreement', branch: 'master', folder: 'ckanext-odm-agreement' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_nav', name: 'ckanext-odm_nav', branch: 'master' , folder: 'ckanext-odm-nav' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_audit', name: 'ckanext-odm_audit', branch: 'master' , folder: 'ckanext-odm-audit' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_migration', name: 'ckanext-odm_migration', branch: 'master' , folder: 'ckanext-odm-migration' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-issues', name: 'ckanext-issues', branch: 'master' , folder: 'ckanext-issues' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-sitemap', name: 'ckanext-sitemap', branch: 'master' , folder: 'ckanext-sitemap' }
- - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_notifications', name: 'ckanext-odm_notifications', branch: 'master', folder: 'ckanext-odm-notifications' }
+ - { url: 'https://github.com/open-data/ckanext-scheming', name: 'ckanext-scheming', branch: 'master', folder: 'ckanext-scheming', install_deps: true }
+ - { url: 'https://github.com/ckan/ckanext-fluent', name: 'ckanext-fluent', branch: 'master', folder: 'ckanext-fluent', install_deps: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_dataset', name: 'ckanext-odm_dataset', branch: 'master', folder: 'ckanext-odm-dataset', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_library', name: 'ckanext-odm_library', branch: 'master', folder: 'ckanext-odm-library', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_laws', name: 'ckanext-odm_laws', branch: 'master', folder: 'ckanext-odm-laws', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_agreement', name: 'ckanext-odm_agreement', branch: 'master', folder: 'ckanext-odm-agreement', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_nav', name: 'ckanext-odm_nav', branch: 'master' , folder: 'ckanext-odm-nav', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_audit', name: 'ckanext-odm_audit', branch: 'master' , folder: 'ckanext-odm-audit', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_migration', name: 'ckanext-odm_migration', branch: 'master' , folder: 'ckanext-odm-migration', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-issues', name: 'ckanext-issues', branch: 'master' , folder: 'ckanext-issues', install_deps: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-sitemap', name: 'ckanext-sitemap', branch: 'master' , folder: 'ckanext-sitemap', install_deps: true }
+ - { url: 'https://github.com/OpenDevelopmentMekong/ckanext-odm_notifications', name: 'ckanext-odm_notifications', branch: 'master', folder: 'ckanext-odm-notifications', install_deps: true }
 
 langs:
  - { origin: 'km', dest: 'km' }
