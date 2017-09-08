@@ -5,6 +5,10 @@
   with_items: "{{ ckan_repos }}"
   when: local_env
 
+- name: Install ckanext-spatial extension dependencies
+  pip: requirements={{virtual_envs}}/ckan/src/{{ item.folder }}/requirements.txt virtualenv="{{virtual_envs}}/ckan"
+  when: local_env
+
 - name: Python setup develop and
   shell: source {{ckan_env}}/bin/activate && python setup.py develop executable=/bin/bash
   args:
