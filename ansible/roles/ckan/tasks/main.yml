@@ -1,7 +1,25 @@
-- name: Updating ckan components
+# For local env
+
+- name: Cloning plugin repo
+  pip: name="git+{{ item.url }}.git#egg={{ item.name }}" virtualenv="{{virtual_envs}}/ckan"
+  with_items: "{{ ckan_repos }}"
+  when: local_env
+
+- name: Python setup develop and
+  shell: source {{ckan_env}}/bin/activate && python setup.py develop executable=/bin/bash
+  args:
+    chdir: "{{virtual_envs}}/ckan/src/{{ item.name }}"
+  with_items: "{{ ckan_repos }}"
+  when: local_env
+
+# For non-local env
+
+- name: Updating ckan components via pip install
   shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: "{{ ckan_repos }}"
-  sudo: yes
+  when: not local_env
+
+# i18n operations (shared)
 
 - name: Ensure there are no duplicates
   shell: msguniq --unique {{ckan_path}}i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o {{ckan_path}}i18n/{{item.origin}}/LC_MESSAGES/ckan.po

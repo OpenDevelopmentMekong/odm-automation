@@ -21,3 +21,4 @@ langs:
  - { origin: 'th', dest: 'th' }
 
 ckan_path: /usr/local/lib/python2.7/dist-packages/ckan/
+local_env: false
