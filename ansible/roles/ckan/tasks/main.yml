@@ -7,6 +7,7 @@
 
 - name: Install ckanext-spatial extension dependencies
   pip: requirements={{virtual_envs}}/ckan/src/{{ item.folder }}/requirements.txt virtualenv="{{virtual_envs}}/ckan"
+  with_items: "{{ ckan_repos }}"
   when: local_env
 
 - name: Python setup develop and
