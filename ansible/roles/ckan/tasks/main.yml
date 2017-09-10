@@ -9,7 +9,6 @@
   pip: requirements={{virtual_envs}}/ckan/src/{{ item.folder }}/requirements.txt virtualenv="{{virtual_envs}}/ckan"
   with_items: "{{ ckan_repos }}"
   when: local_env and item.install_deps
-  sudo: yes
 
 - name: Python setup develop and
   shell: source {{ckan_env}}/bin/activate && python setup.py develop executable=/bin/bash
