@@ -1,6 +1,6 @@
 # For local env
 
-- name: Cloning plugin repo
+- name: Installing plugin via pip
   pip: name="git+{{ item.url }}.git#egg={{ item.name }}" virtualenv="{{virtual_envs}}/ckan"
   with_items: "{{ ckan_repos }}"
   when: local_env
@@ -17,6 +17,21 @@
   with_items: "{{ ckan_repos }}"
   when: local_env
 
+- name: Ensure there are no duplicates
+  shell: msguniq --unique {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
+  with_items: "{{ langs }}"
+  when: local_env
+
+- name: Update CKAN translations ( Merge .po files)
+  shell: msgcat --use-first {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po {{ckan_env}}src/ckanext-odm-dataset/ckanext/odm_dataset/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-library/ckanext/odm_library/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-laws/ckanext/odm_laws/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-migration/ckanext/odm_migration/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-audit/ckanext/odm_audit/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-nav/ckanext/odm_nav/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-issues/ckanext/issues/i18n/{{item.origin}}.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
+  with_items: "{{ langs }}"
+  when: local_env
+
+- name: Update CKAN translations ( Compile .mo file)
+  shell: msgfmt -o {{ckan_path}}ckan/i18n/{{item.dest}}/LC_MESSAGES/ckan.mo {{ckan_path}}ckan/i18n/{{item.dest}}/LC_MESSAGES/ckan.po
+  with_items: "{{ langs }}"
+  when: local_env
+
 # For non-local env
 
 - name: Updating ckan components via pip install
@@ -24,19 +39,22 @@
   with_items: "{{ ckan_repos }}"
   when: not local_env
 
-# i18n operations (shared)
-
 - name: Ensure there are no duplicates
-  shell: msguniq --unique {{ckan_path}}i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o {{ckan_path}}i18n/{{item.origin}}/LC_MESSAGES/ckan.po
+  shell: msguniq --unique {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
   with_items: "{{ langs }}"
+  when: not local_env
 
 - name: Update CKAN translations ( Merge .po files)
-  shell: msgcat --use-first {{ckan_path}}i18n/{{item.origin}}/LC_MESSAGES/ckan.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_dataset/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_library/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_laws/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_migration/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_audit/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/odm_nav/i18n/{{item.origin}}.po /usr/local/lib/python2.7/dist-packages/ckanext/issues/i18n/{{item.origin}}.po -o {{ckan_path}}i18n/{{item.origin}}/LC_MESSAGES/ckan.po
+  shell: msgcat --use-first {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po {{ckan_path}}ckanext/odm_dataset/i18n/{{item.origin}}.po {{ckan_path}}ckanext/odm_library/i18n/{{item.origin}}.po {{ckan_path}}ckanext/odm_laws/i18n/{{item.origin}}.po {{ckan_path}}ckanext/odm_migration/i18n/{{item.origin}}.po {{ckan_path}}ckanext/odm_audit/i18n/{{item.origin}}.po {{ckan_path}}ckanext/odm_nav/i18n/{{item.origin}}.po {{ckan_path}}ckanext/issues/i18n/{{item.origin}}.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
   with_items: "{{ langs }}"
+  when: not local_env
 
 - name: Update CKAN translations ( Compile .mo file)
-  shell: msgfmt -o {{ckan_path}}i18n/{{item.dest}}/LC_MESSAGES/ckan.mo {{ckan_path}}i18n/{{item.dest}}/LC_MESSAGES/ckan.po
+  shell: msgfmt -o {{ckan_path}}ckan/i18n/{{item.dest}}/LC_MESSAGES/ckan.mo {{ckan_path}}ckan/i18n/{{item.dest}}/LC_MESSAGES/ckan.po
   with_items: "{{ langs }}"
+  when: not local_env
+
+# Restarting CKAN
 
 - name: Restarting ckan
   shell: touch /run/uwsgi-reload

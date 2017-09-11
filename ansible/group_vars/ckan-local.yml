@@ -20,7 +20,7 @@ langs:
  - { origin: 'vi', dest: 'vi' }
  - { origin: 'th', dest: 'th' }
 
-ckan_path:  /home/vagrant/src/ckan/ckan/
+ckan_path:  /home/vagrant/src/ckan/
 local_env: true
 virtual_envs: "/home/vagrant/.virtualenvs"
 ckan_env: "{{virtual_envs}}/ckan"
