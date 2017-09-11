@@ -23,7 +23,7 @@
   when: local_env
 
 - name: Update CKAN translations ( Merge .po files)
-  shell: msgcat --use-first {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po {{ckan_env}}src/ckanext-odm-dataset/ckanext/odm_dataset/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-library/ckanext/odm_library/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-laws/ckanext/odm_laws/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-migration/ckanext/odm_migration/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-audit/ckanext/odm_audit/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-odm-nav/ckanext/odm_nav/i18n/{{item.origin}}.po {{ckan_env}}src/ckanext-issues/ckanext/issues/i18n/{{item.origin}}.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
+  shell: msgcat --use-first {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po {{ckan_env}}/src/ckanext-odm-dataset/ckanext/odm_dataset/i18n/{{item.origin}}.po {{ckan_env}}/src/ckanext-odm-library/ckanext/odm_library/i18n/{{item.origin}}.po {{ckan_env}}/src/ckanext-odm-laws/ckanext/odm_laws/i18n/{{item.origin}}.po {{ckan_env}}/src/ckanext-odm-migration/ckanext/odm_migration/i18n/{{item.origin}}.po {{ckan_env}}/src/ckanext-odm-audit/ckanext/odm_audit/i18n/{{item.origin}}.po {{ckan_env}}/src/ckanext-odm-nav/ckanext/odm_nav/i18n/{{item.origin}}.po {{ckan_env}}/src/ckanext-issues/ckanext/issues/i18n/{{item.origin}}.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
   with_items: "{{ langs }}"
   when: local_env
 
