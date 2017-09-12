@@ -5,7 +5,7 @@
   with_items: "{{ ckan_repos }}"
   when: local_env
 
-- name: Install ckanext-spatial extension dependencies
+- name: Install extension dependencies
   pip: requirements={{virtual_envs}}/ckan/src/{{ item.folder }}/requirements.txt virtualenv="{{virtual_envs}}/ckan"
   with_items: "{{ ckan_repos }}"
   when: local_env and item.install_deps
