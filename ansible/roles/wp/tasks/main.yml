@@ -1,3 +1,8 @@
+- name: Remove folder for cloning
+  file: path={{item.path}} state=absent
+  with_items: "{{ wp_repos }}"
+  when: local_env
+
 - name: Clone repository on local_env
   shell: git clone -b {{item.branch}} {{item.url}}.git {{item.path}}
   with_items: "{{ wp_repos }}"
