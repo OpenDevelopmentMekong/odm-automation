@@ -1,23 +1,22 @@
 ---
 wp_repos:
- - { path: '/var/www/html/wp-content/plugins/broken-link-checker', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'prod', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'prod', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/reference-footnotes/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-odm_user_feedback/', branch: 'prod', composer_deps: true, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-odm_profile_pages/', branch: 'prod', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'prod', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'prod', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-odm_related/', branch: 'prod', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/plugins/wp-odm_solr/', branch: 'prod', composer_deps: true, npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'prod', composer_deps: false, npm_deps: true , bower_deps: false, run_gulp: true }
+ - { url: 'https://github.com/dpellenwood/flexible-posts-widget', path: '/var/www/html/wp-content/plugins/flexible-posts-widget/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/magic-fields-team/Magic-Fields-2', path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/qTranslate-Team/qtranslate-x', path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/WPPlugins/tinymce-advanced', path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/oeco/wp-feature-box', path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/wp-plugins/wp-rss-multi-importer', path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wpckan/', path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'master', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wpsparql/', path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'master', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/reference-footnotes', path: '/var/www/html/wp-content/plugins/reference-footnotes/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_user_feedback', path: '/var/www/html/wp-content/plugins/wp-odm_user_feedback/', branch: 'master', composer_deps: true, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_profile_pages', path: '/var/www/html/wp-content/plugins/wp-odm_profile_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_tabular_pages', path: '/var/www/html/wp-content/plugins/wp-odm_tabular_pages/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_dash', path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_related', path: '/var/www/html/wp-content/plugins/wp-odm_related/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_solr', path: '/var/www/html/wp-content/plugins/wp-odm_solr/', branch: 'master', composer_deps: true, npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/jeo', path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { url: 'https://github.com/OpenDevelopmentMekong/wp-odm_theme', path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'master', composer_deps: true, npm_deps: true , bower_deps: false, run_gulp: true }
 
 wp_repos_zip:
   - { path: '/var/www/html/wp-content/plugins/', installable: 'all-in-one-seo-pack.2.3.9.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
