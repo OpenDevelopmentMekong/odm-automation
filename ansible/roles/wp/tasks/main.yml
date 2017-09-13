@@ -1,3 +1,7 @@
+- name: Ensure plugin and theme folder exists
+  file: path={{ item.path }} state=directory mode=0755
+  with_items: "{{ wp_repos }}"
+
 - name: Update Wordpress components using git
   shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}} ;git submodule init; git submodule update; git checkout {{item.branch}};
   args:
