@@ -42,3 +42,5 @@ langs:
  - { origin: 'km', dest: 'km' }
  - { origin: 'vi', dest: 'vi' }
  - { origin: 'my', dest: 'my' }
+
+local_env: false
