@@ -23,9 +23,7 @@
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
   when: item.composer_deps
-  become: yes
-  become_user: root
-  become_method: sudo
+  sudo: yes
 
 - name: Install npm dependencies
   shell: sudo npm install;
@@ -40,9 +38,7 @@
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
   when: item.bower_deps
-  become: yes
-  become_user: root
-  become_method: sudo
+  sudo: yes
 
 - name: Run gulp tasks
   shell: node node_modules/gulp/bin/gulp.js
