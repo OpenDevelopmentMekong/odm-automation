@@ -4,8 +4,12 @@
 - name: Install node, npm and bower
   shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - ; sudo apt-get install -y nodejs; sudo install npm; sudo npm install bower -g
 
-- name: Install gettext
-  shell: sudo apt-get install -y gettext; 
-  
 - name: Ensure tmp folder exists
   file: path=/tmp/wp_repos_zip state=directory mode=0755
+
+- name: Install required packages.
+  action: apt pkg={{ item }} state=present
+  sudo: yes
+  with_items:
+    - gettext
+    - unzip
