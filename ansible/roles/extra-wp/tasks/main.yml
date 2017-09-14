@@ -83,4 +83,4 @@
 - name: Fix permissions
   shell: chown -R www-data:www-data .
   args:
-    chdir: {{wp_path}}i18n/
+    chdir: {{wp_path}}
