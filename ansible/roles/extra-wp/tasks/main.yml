@@ -84,3 +84,4 @@
   shell: chown -R {{apache_user_group}} .
   args:
     chdir: "{{wp_path}}"
+  sudo: yes
