@@ -37,6 +37,7 @@
   with_items: "{{ wp_repos }}"
   when: item.composer_deps
   sudo: yes
+  ignore_errors: yes
 
 - name: Install npm dependencies
   shell: npm install;
@@ -45,6 +46,7 @@
   with_items: "{{ wp_repos }}"
   when: item.npm_deps
   sudo: yes
+  ignore_errors: yes
 
 - name: Install bower dependencies
   shell: bower install --allow-root;
@@ -53,6 +55,7 @@
   with_items: "{{ wp_repos }}"
   when: item.bower_deps
   sudo: yes
+  ignore_errors: yes
 
 - name: Run gulp tasks
   shell: node node_modules/gulp/bin/gulp.js
