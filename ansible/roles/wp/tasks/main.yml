@@ -37,11 +37,12 @@
   sudo: yes
 
 - name: Install npm dependencies
-  shell: sudo npm install;
+  shell: npm install;
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
   when: item.npm_deps
+  sudo: yes
 
 - name: Install bower dependencies
   shell: bower install --allow-root;
