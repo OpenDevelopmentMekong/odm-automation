@@ -44,3 +44,4 @@ langs:
  - { origin: 'my', dest: 'my' }
 
 local_env: false
+wp_path: "/var/www/html/"

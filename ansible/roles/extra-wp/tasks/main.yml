@@ -2,14 +2,14 @@
   copy: src=w3tc_admin_url.patch dest=/tmp/w3tc_admin_url.patch owner=www-data group=www-data mode=0755
 
 - name: Apply w3tc_admin_url.patch patch
-  command: patch -R --dry-run -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
+  command: patch -R --dry-run -d {{wp_path}}wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
   register: patch_applied
   ignore_errors: True
   args:
     chdir: /tmp/
 
 - name: apply patch to w3tc
-  shell: patch -R -d /var/www/html/wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
+  shell: patch -R -d {{wp_path}}wp-content/plugins/w3-total-cache < w3tc_admin_url.patch
   args:
     chdir: /tmp/
   when: patch_applied|succeeded
@@ -23,13 +23,13 @@
 # Statistics
 
 - name: Ensure stats folder exists
-  file: path=/var/www/html/stats/ state=directory mode=0755
+  file: path={{wp_path}}stats/ state=directory mode=0755
 
 - name: Generating stats, copying scripts to tmp folder
   copy: src=generate_top_tier_taxonomic_terms.py dest=/tmp/generate_top_tier_taxonomic_terms.py owner=www-data group=www-data mode=0755
 
 - name: Execute generate_top_tier_taxonomic_terms.py
-  shell: python generate_top_tier_taxonomic_terms.py /var/www/html/stats/top_tier_taxonomic_terms.json
+  shell: python generate_top_tier_taxonomic_terms.py {{wp_path}}stats/top_tier_taxonomic_terms.json
   args:
     chdir: /tmp/
 
@@ -37,50 +37,50 @@
 #   copy: src=generate_stats.py dest=/tmp/generate_stats.py owner=www-data group=www-data mode=0755
 #
 # - name: Execute script for ODM
-#   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_mekong.json all
+#   shell: python generate_stats.py {{wp_path}}stats/records_by_taxonomy_mekong.json all
 #   args:
 #     chdir: /tmp/
 #
 # - name: Execute script for ODC
-#   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_kh.json kh
+#   shell: python generate_stats.py {{wp_path}}stats/records_by_taxonomy_kh.json kh
 #   args:
 #     chdir: /tmp/
 #
 # - name: Execute script for ODMm
-#   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_mm.json mm
+#   shell: python generate_stats.py {{wp_path}}stats/records_by_taxonomy_mm.json mm
 #   args:
 #     chdir: /tmp/
 #
 # - name: Execute script for ODV
-#   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_vn.json vn
+#   shell: python generate_stats.py {{wp_path}}stats/records_by_taxonomy_vn.json vn
 #   args:
 #     chdir: /tmp/
 #
 # - name: Execute script for ODT
-#   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_th.json th
+#   shell: python generate_stats.py {{wp_path}}stats/records_by_taxonomy_th.json th
 #   args:
 #     chdir: /tmp/
 #
 # - name: Execute script for ODL
-#   shell: python generate_stats.py /var/www/html/stats/records_by_taxonomy_la.json la
+#   shell: python generate_stats.py {{wp_path}}stats/records_by_taxonomy_la.json la
 #   args:
 #     chdir: /tmp/
 
 - name: Ensure i18n folder exists
-  file: path=/var/www/html/i18n/ state=directory mode=0755
+  file: path={{wp_path}}i18n/ state=directory mode=0755
 
 - name: Clean i18n directory
-  file: path=/var/www/html/i18n/*.po state=absent
-  
+  file: path={{wp_path}}i18n/*.po state=absent
+
 - name: Copy script to i18n folder
-  copy: src=gather_translations.sh dest=/var/www/html/i18n/gather_translations.sh owner=www-data group=www-data mode=0755
+  copy: src=gather_translations.sh dest={{wp_path}}i18n/gather_translations.sh owner=www-data group=www-data mode=0755
 
 - name: Execute gather_translations.sh
   shell: ./gather_translations.sh 1/4e820b74232a765bd25e94a54435266a3cd25f64
   args:
-    chdir: /var/www/html/i18n/
-    
+    chdir: {{wp_path}}i18n/
+
 - name: Fix permissions
   shell: chown -R www-data:www-data .
   args:
-    chdir: /var/www/html/i18n/
+    chdir: {{wp_path}}i18n/

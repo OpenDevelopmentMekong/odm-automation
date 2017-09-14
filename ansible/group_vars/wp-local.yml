@@ -44,3 +44,4 @@ langs:
  - { origin: 'my', dest: 'my' }
 
 local_env: true
+wp_path: "/home/vagrant/webapps/wp/"
