@@ -12,7 +12,8 @@
   shell: "patch -R -d {{wp_path}}wp-content/plugins/w3-total-cache < w3tc_admin_url.patch"
   args:
     chdir: /tmp/
-  when: patch_applied|succeeded
+  when: patch_applied
+  ignore_errors: True
 
 - name: Clear /cache folder
   shell: rm -rf /cache/*
