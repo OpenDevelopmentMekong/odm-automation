@@ -4,7 +4,7 @@
   when: local_env
 
 - name: Clone repository on local_env
-  shell: git clone -b {{item.branch}} {{item.url}}.git {{item.path}}
+  shell: git clone -b {{item.branch}} {{item.url}}.git {{item.path}} --recursive
   with_items: "{{ wp_repos }}"
   when: local_env
 

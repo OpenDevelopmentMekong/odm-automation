@@ -45,3 +45,4 @@ langs:
 
 local_env: false
 wp_path: "/var/www/html/"
+apache_user_group: "www-data:www-data"

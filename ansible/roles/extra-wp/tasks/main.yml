@@ -81,6 +81,6 @@
     chdir: "{{wp_path}}i18n/"
 
 - name: Fix permissions
-  shell: chown -R www-data:www-data .
+  shell: chown -R {{apache_user_group}} .
   args:
     chdir: "{{wp_path}}"
