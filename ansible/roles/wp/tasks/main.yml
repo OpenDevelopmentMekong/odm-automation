@@ -96,6 +96,9 @@
   shell: "msguniq --unique {{wp_path}}wp-content/plugins/wp-odm_user_feedback/i18n/wp-odm_user_feedback-{{item.origin}}.po -o {{wp_path}}wp-content/plugins/wp-odm_user_feedback/i18n/wp-odm_user_feedback-{{item.origin}}.po"
   with_items: "{{ langs }}"
 
+- name: Ensure languages folder exists
+  file: path="{{wp_path}}wp-content/languages/" state=directory mode=0755
+
 - name: Update Wordpress translations ( Merge .po files) - themes
   shell: "msgcat {{wp_path}}wp-content/themes/jeo/i18n/{{item.origin}}.po {{wp_path}}wp-content/themes/wp-odm_theme/i18n/{{item.origin}}.po -o {{wp_path}}wp-content/languages/{{item.dest}}.po"
   with_items: "{{ langs }}"
