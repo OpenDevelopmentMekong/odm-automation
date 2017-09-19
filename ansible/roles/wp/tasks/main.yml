@@ -1,19 +1,19 @@
 - name: Remove folder for cloning
   file: path={{item.path}} state=absent
   with_items: "{{ wp_repos }}"
-  when: local_env
+  when: local_env and ((not component) or (component and component == item.name) )
 
 - name: Clone repository on local_env
   shell: git clone -b {{item.branch}} {{item.url}}.git {{item.path}} --recursive
   with_items: "{{ wp_repos }}"
-  when: local_env
+  when: local_env and ((not component) or (component and component == item.name) )
 
 - name: Update Wordpress components using git
   shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}} ;git submodule init; git submodule update; git checkout {{item.branch}};
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
-  when: not local_env
+  when: not local_env and ((not component) or (component and component == item.name) )
 
 - name: Ensure tmp folder exists
   file: path=/tmp/wp_repos_zip state=directory mode=0755
@@ -22,6 +22,7 @@
   get_url: url={{ item.downloadable }}  dest=/tmp/wp_repos_zip/{{ item.installable }} mode=0755
   with_items: "{{ wp_repos_zip }}"
   ignore_errors: yes
+  when: ((not component) or (component and component == item.name) )
 
 - name: Update Wordpress components using zip files
   shell: unzip -o /tmp/wp_repos_zip/{{ item.installable }} -d ./
@@ -29,13 +30,14 @@
   args:
     chdir: "{{ item.path }}"
   ignore_errors: yes
+  when: ((not component) or (component and component == item.name) )
 
 - name: Install composer dependencies
   shell: composer update;
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
-  when: item.composer_deps
+  when: item.composer_deps and ((not component) or (component and component == item.name) )
   sudo: yes
   ignore_errors: yes
 
@@ -44,7 +46,7 @@
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
-  when: item.npm_deps
+  when: item.npm_deps and ((not component) or (component and component == item.name) )
   sudo: yes
   ignore_errors: yes
 
@@ -53,7 +55,7 @@
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
-  when: item.bower_deps
+  when: item.bower_deps and ((not component) or (component and component == item.name) )
   sudo: yes
   ignore_errors: yes
 
@@ -62,7 +64,7 @@
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
-  when: item.run_gulp
+  when: item.run_gulp and ((not component) or (component and component == item.name) )
 
 - name: Ensure there are no duplicates - jeo
   shell: "msguniq --unique {{wp_path}}wp-content/themes/jeo/i18n/{{item.origin}}.po -o {{wp_path}}wp-content/themes/jeo/i18n/{{item.origin}}.po"

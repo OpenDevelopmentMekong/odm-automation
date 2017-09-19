@@ -3,19 +3,19 @@
 - name: Installing plugin via pip
   pip: name="git+{{ item.url }}.git#egg={{ item.name }}" virtualenv="{{virtual_envs}}/ckan"
   with_items: "{{ ckan_repos }}"
-  when: local_env
+  when: local_env and ((not component) or (component and component == item.name) )
 
 - name: Install extension dependencies
   pip: requirements={{virtual_envs}}/ckan/src/{{ item.folder }}/requirements.txt virtualenv="{{virtual_envs}}/ckan"
   with_items: "{{ ckan_repos }}"
-  when: local_env and item.install_deps
+  when: local_env and item.install_deps  and ((not component) or (component and component == item.name) )
 
 - name: Python setup develop and
   shell: source {{ckan_env}}/bin/activate && python setup.py develop executable=/bin/bash
   args:
     chdir: "{{virtual_envs}}/ckan/src/{{ item.folder }}"
   with_items: "{{ ckan_repos }}"
-  when: local_env
+  when: local_env and ((not component) or (component and component == item.name) )
 
 - name: Ensure there are no duplicates
   shell: msguniq --unique {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
@@ -37,7 +37,7 @@
 - name: Updating ckan components via pip install
   shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: "{{ ckan_repos }}"
-  when: not local_env
+  when: not local_env and ((not component) or (component and component == item.name) )
 
 - name: Ensure there are no duplicates
   shell: msguniq --unique {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po -o {{ckan_path}}ckan/i18n/{{item.origin}}/LC_MESSAGES/ckan.po
