@@ -1,5 +1,8 @@
 - name: Update dependencies
   shell: pip install --upgrade pip
 
+- name: refresh package list
+  shell: sudo apt-get update
+
 - name: Install gettext
-  shell: sudo apt-get install -y gettext; 
+  shell: sudo apt-get install -y gettext;
