@@ -34,6 +34,10 @@
 
 # For non-local env
 
+- name: Cleanup src folder
+  shell: rm -rf /src/ckanext-*
+  when: not local_env
+
 - name: Updating ckan components via pip install
   shell: pip install --upgrade git+{{ item.url }}.git@{{ item.branch }}#egg={{ item.name }}
   with_items: "{{ ckan_repos }}"
