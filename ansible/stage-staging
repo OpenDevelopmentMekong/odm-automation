@@ -1,2 +1,2 @@
-[ckan-prod]
+[ckan-staging]
 ckan ansible_port=39303 ansible_host=188.166.244.121
