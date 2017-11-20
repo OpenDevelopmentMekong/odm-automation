@@ -19,6 +19,7 @@ langs:
  - { origin: 'my', dest: 'my' }
  - { origin: 'vi', dest: 'vi' }
  - { origin: 'th', dest: 'th' }
+ - { origin: 'lo', dest: 'lo' }
 
 ckan_path:  /home/vagrant/src/ckan/
 local_env: true
