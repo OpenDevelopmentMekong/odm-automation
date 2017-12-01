@@ -19,7 +19,11 @@
   file: path=/tmp/wp_repos_zip state=directory mode=0755
 
 - name: Download plugins as ZIP files
-  get_url: url={{ item.downloadable }} dest=/tmp/wp_repos_zip/{{ item.installable }} mode=0755
+  get_url:
+    url: "{{ item.downloadable }}"
+    dest: /tmp/wp_repos_zip/{{ item.installable }}
+    mode: 0755
+    timeout: 120
   with_items: "{{ wp_repos_zip }}"
   ignore_errors: yes
   when: ((not component) or (component and component == item.name) )
