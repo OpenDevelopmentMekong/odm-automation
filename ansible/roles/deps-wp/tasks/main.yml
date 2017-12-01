@@ -13,3 +13,13 @@
   with_items:
     - gettext
     - unzip
+
+- name: Checkout locked wp version
+  shell: git checkout {{ wp_version}}
+  args:
+    chdir: "{{ wp_path }}"
+
+- name: Pull latest wordpress
+  shell: git pull origin {{ wp_version}}
+  args:
+    chdir: "{{ wp_path }}"

@@ -45,4 +45,5 @@ langs:
 
 local_env: true
 wp_path: "/home/vagrant/webapps/wp/"
+wp_version: "4.9.1"
 apache_user_group: "vagrant:vagrant"

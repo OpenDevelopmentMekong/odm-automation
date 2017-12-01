@@ -45,4 +45,5 @@ langs:
 
 local_env: false
 wp_path: "/var/www/html/"
+wp_version: "4.9.1"
 apache_user_group: "www-data:www-data"
