@@ -9,7 +9,7 @@
   when: local_env and ((not component) or (component and component == item.name) )
 
 - name: Update Wordpress components using git
-  shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}} ;git submodule init; git submodule update; git checkout {{item.branch}};
+  shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}};
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
