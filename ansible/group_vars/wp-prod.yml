@@ -4,8 +4,8 @@ wp_repos:
  - { name: 'Magic-Fields-2', url: 'https://github.com/magic-fields-team/Magic-Fields-2', path: '/var/www/html/wp-content/plugins/magic-fields-2/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'qtranslate-x', url: 'https://github.com/qTranslate-Team/qtranslate-x', path: '/var/www/html/wp-content/plugins/qtranslate-x/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'tinymce-advanced', url: 'https://github.com/WPPlugins/tinymce-advanced', path: '/var/www/html/wp-content/plugins/tinymce-advanced/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
- - { name: 'wp-rss-multi-importer', url: 'https://github.com/wp-plugins/wp-rss-multi-importer', path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'wp-feature-box', url: 'https://github.com/OpenDevelopmentMekong/wp-feature-box', path: '/var/www/html/wp-content/plugins/wp-feature-box/', branch: 'prod', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { name: 'wp-rss-multi-importer', url: 'https://github.com/wp-plugins/wp-rss-multi-importer', path: '/var/www/html/wp-content/plugins/wp-rss-multi-importer/', branch: 'master', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'wpckan', url: 'https://github.com/OpenDevelopmentMekong/wpckan', path: '/var/www/html/wp-content/plugins/wpckan/', branch: 'prod', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'wpsparql', url: 'https://github.com/OpenDevelopmentMekong/wpsparql', path: '/var/www/html/wp-content/plugins/wpsparql/', branch: 'prod', composer_deps: true , npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'reference-footnotes', url: 'https://github.com/OpenDevelopmentMekong/reference-footnotes', path: '/var/www/html/wp-content/plugins/reference-footnotes/', branch: 'prod', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
@@ -21,7 +21,7 @@ wp_repos:
 wp_repos_zip:
   - { path: '/var/www/html/wp-content/plugins/', installable: 'all-in-one-seo-pack.2.3.9.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tWjZ4b0d4V2xZTk0', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'ewww-image-optimizer.3.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVm1Sek5IanEtR00', composer_deps: false, npm_deps: false , bower_deps: false }
-  - { path: '/var/www/html/wp-content/plugins/', installable: 'featured-articles-pro-3_patched.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tOG9pbHRhUjBYNTA', composer_deps: false, npm_deps: false , bower_deps: false }
+  - { path: '/var/www/html/wp-content/plugins/', installable: 'featured-articles-pro-3_patched.zip', downloadable: 'https://drive.google.com/uc?export=download&id=1KlQDPb_T7sZTxIWchNmy7_wa5xkvLBrP', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'google-analytics-dashboard-for-wp.5.1.1.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tOWYxNUpYS3lQNm8', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu-pro-1.6.2.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tN0U1T3BUVHl2azQ', composer_deps: false, npm_deps: false , bower_deps: false }
   - { path: '/var/www/html/wp-content/plugins/', installable: 'megamenu.2.2.3.1.zip', downloadable: 'https://drive.google.com/uc?export=download&id=0B05SClhiPV4tVjFaY0pEWjdPd28', composer_deps: false, npm_deps: false , bower_deps: false }
@@ -45,4 +45,5 @@ langs:
 
 local_env: false
 wp_path: "/var/www/html/"
+wp_version: "4.9.2"
 apache_user_group: "www-data:www-data"

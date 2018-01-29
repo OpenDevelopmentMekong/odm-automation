@@ -86,3 +86,6 @@
   args:
     chdir: "{{wp_path}}"
   sudo: yes
+
+- name: Copy en_us flag
+  copy: src=en_us.png dest="{{wp_path}}wp-content/plugins/qtranslate-x/flags/en_us.png" owner=www-data group=www-data

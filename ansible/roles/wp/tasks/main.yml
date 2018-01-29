@@ -9,7 +9,7 @@
   when: local_env and ((not component) or (component and component == item.name) )
 
 - name: Update Wordpress components using git
-  shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}} ;git submodule init; git submodule update; git checkout {{item.branch}};
+  shell: git clean -f; git reset --hard HEAD; git checkout {{item.branch}}; git pull origin {{item.branch}};
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ wp_repos }}"
@@ -19,7 +19,11 @@
   file: path=/tmp/wp_repos_zip state=directory mode=0755
 
 - name: Download plugins as ZIP files
-  get_url: url={{ item.downloadable }}  dest=/tmp/wp_repos_zip/{{ item.installable }} mode=0755
+  get_url:
+    url: "{{ item.downloadable }}"
+    dest: /tmp/wp_repos_zip/{{ item.installable }}
+    mode: 0755
+    timeout: 120
   with_items: "{{ wp_repos_zip }}"
   ignore_errors: yes
   when: ((not component) or (component and component == item.name) )
@@ -139,5 +143,5 @@
 - name: Set user and group for all files in themes
   file: path="{{wp_path}}wp-content/themes" owner=www-data group=www-data recurse=yes
 
-- name: Copy tinymce.min.js file to hack the wordpress editor so it does not trim
-  copy: src=tinymce.min.js dest="{{wp_path}}wp-includes/js/tinymce/tinymce.min.js" owner=www-data group=www-data
+#- name: Copy tinymce.min.js file to hack the wordpress editor so it does not trim
+#  copy: src=tinymce.min.js dest="{{wp_path}}wp-includes/js/tinymce/tinymce.min.js" owner=www-data group=www-data
