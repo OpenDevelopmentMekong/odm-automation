@@ -44,7 +44,7 @@ langs:
  - { origin: 'vi', dest: 'vi' }
  - { origin: 'my', dest: 'my' }
  - { origin: 'th', dest: 'th' }
- - { origin: 'la', dest: 'la' }
+ - { origin: 'lo', dest: 'lo' }
 
 local_env: false
 wp_path: "/var/www/html/"
