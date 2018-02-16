@@ -15,7 +15,7 @@ wp_repos:
  - { name: 'wp-odm_dash', url: 'https://github.com/OpenDevelopmentMekong/wp-odm_dash', path: '/var/www/html/wp-content/plugins/wp-odm_dash/', branch: 'prod', composer_deps: false, npm_deps: false , bower_deps: true, run_gulp: false }
  - { name: 'wp-odm_related', url: 'https://github.com/OpenDevelopmentMekong/wp-odm_related', path: '/var/www/html/wp-content/plugins/wp-odm_related/', branch: 'prod', composer_deps: false, npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'wp-odm_solr', url: 'https://github.com/OpenDevelopmentMekong/wp-odm_solr', path: '/var/www/html/wp-content/plugins/wp-odm_solr/', branch: 'prod', composer_deps: true, npm_deps: false , bower_deps: false, run_gulp: false }
- - { name: 'jeo', url: 'https://github.com/OpenDevelopmentMekong/jeo', path: '/var/www/html/wp-content/themes/jeo/', branch: 'prod', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
+ - { name: 'jeo', url: 'https://github.com/OpenDevelopmentMekong/jeo', path: '/var/www/html/wp-content/themes/jeo/', branch: 'master', composer_deps: false , npm_deps: false , bower_deps: false, run_gulp: false }
  - { name: 'wp-odm_theme', url: 'https://github.com/OpenDevelopmentMekong/wp-odm_theme', path: '/var/www/html/wp-content/themes/wp-odm_theme/', branch: 'prod', composer_deps: true, npm_deps: true , bower_deps: false, run_gulp: true }
 
 wp_repos_zip:
