@@ -42,6 +42,8 @@ langs:
  - { origin: 'km', dest: 'km' }
  - { origin: 'vi', dest: 'vi' }
  - { origin: 'my', dest: 'my' }
+ - { origin: 'th', dest: 'th' }
+ - { origin: 'la', dest: 'la' }
 
 local_env: true
 wp_path: "/home/vagrant/webapps/wp/"
